@@ -1,0 +1,21 @@
+<h2> <%= params['question']%> </h2>
+
+<% @reponse = ''
+
+if params['question'] == "I am going to work"
+   @reponse = 'Great!'
+elsif params['question'].include?('?')
+  @reponse = "Silly question, get dressed and go to work!"
+else
+  @reponse = "I don't care, get dressed and go to work!"
+end
+
+%>
+
+<p class ="reponse"> <span class="rep-tittle">Coach : </span>
+<%= @reponse%>
+</p>
+
+<button class ="btn-form">
+<%= link_to "Another one", "/" %>
+</button>
